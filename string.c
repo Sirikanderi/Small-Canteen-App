@@ -21,15 +21,17 @@ int main()
     {
         count=0;//count how many times this char appears
         //check how many times str[i] appears in string
-        for(j=0;j<len;j++)
+        //Start j from i+1 to avoid counting the same character
+        for(j=i+1;j<len;j++)
         {
             if(str[i]==str[j])
             {
                 count++;//increase count if char matches
             }
         }
-        //if count is 1, this char does not repeat
-        if(count==1)
+        
+        //if count is 0, this char does not repeat after position i,so its non repeating
+        if(count==0)
         {
             printf("First non-repeating char is: %c\n", str[i]);
             return 0;//stop after finding first one
